@@ -1,0 +1,106 @@
+package fluxomaximo;
+
+import java.util.LinkedList;
+
+//implementação do metodo Ford Fulkerson para o problema do fluxo maximo
+class MaxFlow {
+
+    static final int V = 6; //=> numero de vertices do grafo escolhido para esse exemplo
+
+    /* Retorna verdadeiro se houver um caminho da fonte 's' 
+     ate o final/somidouro 't' . tambem prenche parent[] para
+     armazenar o caminho */
+    boolean bfs(int rGraph[][], int s, int t, int parent[]) {
+
+        boolean visited[] = new boolean[V];
+        for (int i = 0; i < V; ++i) {
+            visited[i] = false;
+        }
+
+		// Crie uma fila,enfileira o vertice e marca o vértice de origem como visitado
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        queue.add(s);
+        visited[s] = true;
+        parent[s] = -1;
+
+        while (queue.size() != 0) {
+            int u = queue.poll();
+
+            for (int v = 0; v < V; v++) {
+                if (visited[v] == false && rGraph[u][v] > 0) {
+                /*Se encontrarmos uma conexão com o nó final, então não haverá mais nenhum ponto no BFS.
+                    Nós apenas temos que definir seu parent e podemos retornar verdadeiro*/
+                    if (v == t) {
+                        parent[v] = u;
+                        return true;
+                    }
+                    queue.add(v);
+                    parent[v] = u;
+                    visited[v] = true;
+                }
+            }
+        }
+//Não alcançou o nó final no BFS a partir da origem, então retorna falso
+        return false;
+    }
+
+    // Retorna o fluxo máximo de s para t no dado grafo
+    int fordFulkerson(int graph[][], int s, int t) {
+        int u, v;
+
+        /*Cria um grafo residual e preenche esse grafo com as capacidades dadas no 
+        grafo original como capacidades residuais .
+        rGraph [i] [j] indica a capacidade residual da aresta de i a j (se houver uma aresta.
+        Se rGraph [i] [j] é 0, então não há) */
+        
+        int rGraph[][] = new int[V][V];
+
+        for (u = 0; u < V; u++) {
+            for (v = 0; v < V; v++) {
+                rGraph[u][v] = graph[u][v];
+            }
+        }
+
+        // Este vetor é preenchido por BFS e  armazena o caminho
+        int parent[] = new int[V];
+
+        int max_flow = 0;
+
+        while (bfs(rGraph, s, t, parent)) {
+            /* Encontra a capacidade residual mínima dos arcos e ao longo do caminho é preenchido por BFS. 
+             Ou podemos dizer encontra o fluxo máximo através do caminho encontrado*/
+            int path_flow = Integer.MAX_VALUE;
+            for (v = t; v != s; v = parent[v]) {
+                u = parent[v];
+                path_flow = Math.min(path_flow, rGraph[u][v]);
+            }
+
+            /*atualizar as capacidades residuais das arestas e inverte as arestas ao longo do caminho*/
+            for (v = t; v != s; v = parent[v]) {
+                u = parent[v];
+                rGraph[u][v] -= path_flow;
+                rGraph[v][u] += path_flow;
+            }
+
+            // Adiciona o fluxo do caminho ao fluxo geral
+            max_flow += path_flow;
+        }
+
+        return max_flow;
+    }
+
+    // teste
+    public static void main(String[] args)
+            throws java.lang.Exception {
+        // inserindo a capacidade de fluxo das arestas
+        int graph[][] = new int[][]{
+            {0, 16, 13, 0, 0, 0}, {0, 0, 10, 12, 0, 0},
+            {0, 4, 0, 0, 14, 0}, {0, 0, 9, 0, 0, 20},
+            {0, 0, 0, 7, 0, 4}, {0, 0, 0, 0, 0, 0}
+        };
+        MaxFlow m = new MaxFlow();
+
+        System.out.println("O fluxo máximo possível é : " + m.fordFulkerson(graph, 0, 5));
+
+    }
+}
