@@ -1,9 +1,9 @@
-# Problema-do-Fluxo-maximo  
-Trabalho final de Estrutura de dados sobre Grafos.    
+## Informações Gerais  
+Trabalho final de Estrutura de dados: Grafos    
 Universidade Federal do Pará - UFPA  
 Professor : Glauco Gonçalves  
 Alunos : Michael André Costa, Fernando Farias Dimas  
-O problema do fluxo Máximo (The Maximum Flow Problem)  
+# O Problema do Fluxo Máximo (The Maximum Flow Problem).  
 Considere uma rede direcionada (dígrafo) conectada, com 2 nós especiais
 Denominados Origem e destino, associado a cada arco, a uma distância não negativa. O objetivo e encontrar o fluxo máximo na rede. Além disso o problema de fluxo máximo é uma poderosa ferramenta de modelagem, capaz de representar uma grande variedade de outros problemas.
 
@@ -18,7 +18,8 @@ Que consiste basicamente em:
 Dado um grafo que representa uma rede de fluxo onde aresta borda tem uma certa capacidade. Esse algoritmo também tem dois vértices origem ‘s’ e saída ‘t’ no grafo, a partir disso e possível encontrar o fluxo máximo possível de s para t com as seguintes restrições:
 
 O fluxo em uma aresta não excede a capacidade dada da aresta.  
-O fluxo de entrada é igual ao fluxo de saída para todos os vértices, exceto s e t.  
+O fluxo de entrada é igual ao fluxo de saída para todos os vértices, exceto s e t.      
+
 Exemplo com origem 0 e saída 5 – suas arestas com a capacidade máxima  
 ![ford-fulkerson 1](https://user-images.githubusercontent.com/88215040/135733578-cb7dcb45-20da-4389-9919-30a992c5f0a8.PNG)
 
