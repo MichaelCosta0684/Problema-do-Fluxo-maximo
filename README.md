@@ -20,10 +20,10 @@ Dado um grafo que representa uma rede de fluxo onde aresta borda tem uma certa c
 O fluxo em uma aresta não excede a capacidade dada da aresta.  
 O fluxo de entrada é igual ao fluxo de saída para todos os vértices, exceto s e t.  
 Exemplo com origem 0 e saída 5 – suas arestas com a capacidade máxima  
-<img width="197" alt="ford_fulkerson11" src="https://user-images.githubusercontent.com/88215040/135733421-c846b90d-938e-473d-82d4-11d92d2c3417.png">
+![ford-fulkerson 1](https://user-images.githubusercontent.com/88215040/135733578-cb7dcb45-20da-4389-9919-30a992c5f0a8.PNG)
 
 Aplicando o algoritmo de Ford-Fulkerson-fluxo máximo de 23  
-<img width="228" alt="ford_fulkerson2" src="https://user-images.githubusercontent.com/88215040/135733494-af00aecd-ecda-4bc6-bf9f-7776927ecf1a.png">
+![ford-fulkerson 2](https://user-images.githubusercontent.com/88215040/135733587-683974e7-cc49-4cbb-afc7-ea87fafd9655.PNG)
 
 
 Para implementar esse algoritmo em Java vamos primeiro definir um conceito de Grafo Residual que é necessário e muito importante para entender a implementação.
