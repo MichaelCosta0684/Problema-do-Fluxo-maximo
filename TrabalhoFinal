@@ -2,10 +2,10 @@ package fluxomaximo;
 
 import java.util.LinkedList;
 
-//implementação do metodo Ford Fulkerson para o problema do fluxo maximo
+//implementa o metodo Ford-Fulkerson para o problema do fluxo máximo
 class MaxFlow {
 
-    static final int V = 6; //=> numero de vertices do grafo escolhido para esse exemplo
+    static final int V = 6; //=> numero total de vertices do grafo escolhido para este exemplo
 
     /* Retorna verdadeiro se houver um caminho da fonte 's' 
      ate o final/somidouro 't' . tambem prenche parent[] para
@@ -17,7 +17,7 @@ class MaxFlow {
             visited[i] = false;
         }
 
-		// Crie uma fila,enfileira o vertice e marca o vértice de origem como visitado
+		// Crie uma fila, enfileira o vertice e marca o vértice de origem como visitado
         LinkedList<Integer> queue = new LinkedList<Integer>();
         queue.add(s);
         visited[s] = true;
@@ -40,7 +40,7 @@ class MaxFlow {
                 }
             }
         }
-//Não alcançou o nó final no BFS a partir da origem, então retorna falso
+//Não alcançou o nó final no BFS a partir da origem, dessa forma retorna falso
         return false;
     }
 
@@ -92,7 +92,7 @@ class MaxFlow {
     // teste
     public static void main(String[] args)
             throws java.lang.Exception {
-        // inserindo a capacidade de fluxo das arestas
+        // inserindo a capacidade de fluxo das arestas, 6
         int graph[][] = new int[][]{
             {0, 16, 13, 0, 0, 0}, {0, 0, 10, 12, 0, 0},
             {0, 4, 0, 0, 14, 0}, {0, 0, 9, 0, 0, 20},
