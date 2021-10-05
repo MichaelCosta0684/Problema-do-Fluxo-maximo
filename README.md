@@ -21,7 +21,7 @@ O fluxo em uma aresta não excede a capacidade dada da aresta.
 O fluxo de entrada é igual ao fluxo de saída para todos os vértices, exceto s e t.      
 
 Exemplo com origem 0 e saída 5 – suas arestas com a capacidade máxima  
-![ford-fulkerson 1](https://user-images.githubusercontent.com/88215040/136113511-041c4688-1cb7-4d6c-a16b-d236419072a3.PNG)
+![ford-fulkerson 1](https://user-images.githubusercontent.com/88215040/136114358-adfc57f2-d419-4531-891c-ea9aec6ebb44.PNG)
 
 Aplicando o algoritmo de Ford-Fulkerson-fluxo máximo de 23  
 ![ford-fulkerson 2](https://user-images.githubusercontent.com/88215040/136113559-225daef0-8f59-467e-a7c0-6590dc1fe12b.PNG)
