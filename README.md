@@ -21,10 +21,10 @@ O fluxo em uma aresta não excede a capacidade dada da aresta.
 O fluxo de entrada é igual ao fluxo de saída para todos os vértices, exceto s e t.      
 
 Exemplo com origem 0 e saída 5 – suas arestas com a capacidade máxima  
-![ford-fulkerson 1](https://user-images.githubusercontent.com/88215040/135733578-cb7dcb45-20da-4389-9919-30a992c5f0a8.PNG)
+![ford-fulkerson 1](https://user-images.githubusercontent.com/88215040/136113511-041c4688-1cb7-4d6c-a16b-d236419072a3.PNG)
 
 Aplicando o algoritmo de Ford-Fulkerson-fluxo máximo de 23  
-![ford-fulkerson 2](https://user-images.githubusercontent.com/88215040/135733587-683974e7-cc49-4cbb-afc7-ea87fafd9655.PNG)
+![ford-fulkerson 2](https://user-images.githubusercontent.com/88215040/136113559-225daef0-8f59-467e-a7c0-6590dc1fe12b.PNG)
 
 
 Para implementar esse algoritmo em Java vamos primeiro definir um conceito de Grafo Residual que é necessário e muito importante para entender a implementação.
