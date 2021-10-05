@@ -2,7 +2,7 @@
 Trabalho final de Estrutura de dados: Grafos    
 Universidade Federal do Pará - UFPA  
 Professor : Glauco Gonçalves  
-Alunos : Michael André Costa, Fernando Farias Dimas  
+Alunos : Michael André Costa, Fernando Farias Dimas, Agnes Catarina Santos Gaia  
 # O Problema do Fluxo Máximo (The Maximum Flow Problem).  
 Considere uma rede direcionada (dígrafo) conectada, com 2 nós especiais
 Denominados Origem e destino, associado a cada arco, a uma distância não negativa. O objetivo e encontrar o fluxo máximo na rede. Além disso o problema de fluxo máximo é uma poderosa ferramenta de modelagem, capaz de representar uma grande variedade de outros problemas.
