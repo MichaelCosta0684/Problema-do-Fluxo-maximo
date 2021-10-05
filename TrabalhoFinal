@@ -75,7 +75,7 @@ class MaxFlow {
                 path_flow = Math.min(path_flow, rGraph[u][v]);
             }
 
-            /*atualizar as capacidades residuais das arestas e inverte as arestas ao longo do caminho*/
+            /*atualiza as capacidades residuais das arestas e as inverte ao longo do caminho*/
             for (v = t; v != s; v = parent[v]) {
                 u = parent[v];
                 rGraph[u][v] -= path_flow;
@@ -92,7 +92,7 @@ class MaxFlow {
     // teste
     public static void main(String[] args)
             throws java.lang.Exception {
-        // inserindo a capacidade de fluxo das arestas, 6
+        // inserindo a capacidade de fluxo das arestas
         int graph[][] = new int[][]{
             {0, 16, 13, 0, 0, 0}, {0, 0, 10, 12, 0, 0},
             {0, 4, 0, 0, 14, 0}, {0, 0, 9, 0, 0, 20},
